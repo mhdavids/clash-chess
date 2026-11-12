@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Clash Chess</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>⚔ Clash Chess</h1>
+  <div class="controls">
+    <select id="mode" aria-label="Game mode">
+      <option value="ai">vs Computer</option>
+      <option value="2p">2 Players</option>
+    </select>
+    <label class="chk"><input type="checkbox" id="auto"> Auto-resolve battles</label>
+    <button id="new">New game</button>
+  </div>
+</header>
+
+<main>
+  <div class="boardwrap">
+    <div id="status"></div>
+    <div id="board"></div>
+  </div>
+  <aside>
+    <section>
+      <h2>How it works</h2>
+      <p>Pieces move like chess, but a capture is only an <em>attempt</em>. The two pieces duel, trading strikes (attacker first). Stop the marker in the green zone to hit, in the gold centre for double damage. The winner holds the square; the loser leaves the board.</p>
+      <p>Wounds are permanent. There is no check or checkmate: you win by defeating the enemy king in battle.</p>
+    </section>
+    <section>
+      <h2>Fighters</h2>
+      <table id="stats"></table>
+    </section>
+    <section>
+      <h2>Battle log</h2>
+      <ol id="log"></ol>
+    </section>
+  </aside>
+</main>
+
+<div id="battle" hidden>
+  <div class="arena">
+    <div id="btitle"></div>
+    <div class="fighters">
+      <div class="fighter" id="fa">
+        <div class="float"></div>
+        <div class="glyph"></div>
+        <div class="fname"></div>
+        <div class="pips"></div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="fighter" id="fd">
+        <div class="float"></div>
+        <div class="glyph"></div>
+        <div class="fname"></div>
+        <div class="pips"></div>
+      </div>
+    </div>
+    <div id="meter"><div id="zone"><div id="crit"></div></div><div id="marker"></div></div>
+    <div id="prompt"></div>
+    <button id="strike">STRIKE!</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
